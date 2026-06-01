@@ -1,5 +1,14 @@
 # AI Hallucination Evaluation and Reliability Analysis Framework 
 
+## Abstract
+
+Large Language Models (LLMs) have demonstrated remarkable capabilities across reasoning, question answering, summarization, and conversational tasks. Despite these advances, hallucinated outputs—responses that are factually incorrect, unsupported, or fabricated—remain a significant challenge for reliable deployment in real-world systems.
+
+This project presents an experimental evaluation framework for analyzing the reliability of LLM-generated responses through a combination of lexical metrics, semantic similarity analysis, hallucination assessment, benchmarking, and LLM-as-a-Judge evaluation. The framework supports multi-model comparison, historical performance tracking, benchmark execution, and automated quality assessment.
+
+The primary objective is to investigate how response quality, factual consistency, and model reliability can be measured systematically rather than relying solely on subjective human judgment. By combining multiple evaluation strategies within a unified platform, the framework provides insights into model behavior, strengths, weaknesses, and potential hallucination risks.
+
+This work serves as a foundation for future research in hallucination mitigation, multi-model verification, agent reliability assessment, and self-improving evaluation systems. 
 ## Dashboard Preview
 
 The framework provides an interactive evaluation dashboard for comparing model responses, inspecting judge scores, and analyzing hallucination indicators.
