@@ -63,7 +63,46 @@ The project investigates several practical and research-oriented questions:
 
 ## System Architecture
 
-The framework is organized into four major layers.
+The framework follows a multi-stage evaluation pipeline:
+
+```text
+User Query
+    │
+    ▼
+Multi-Model Inference Layer
+(Llama / DeepSeek / Qwen)
+    │
+    ▼
+Response Collection
+    │
+    ▼
+Evaluation Engine
+├── BLEU
+├── ROUGE
+├── Semantic Similarity
+├── Keyword Overlap
+└── Composite Score
+    │
+    ▼
+Hallucination Analysis
+├── Reference Comparison
+├── Consistency Check
+├── Evidence Alignment
+└── Risk Assessment
+    │
+    ▼
+LLM-as-a-Judge Evaluation
+├── Accuracy
+├── Completeness
+├── Clarity
+└── Reasoning Quality
+    │
+    ▼
+Database Storage
+    │
+    ▼
+Analytics Dashboard
+```
 
 ### 1. Model Execution Layer
 
