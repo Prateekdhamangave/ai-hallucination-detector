@@ -6,6 +6,14 @@ The framework provides an interactive evaluation dashboard for comparing model r
 
 ![Evaluation Dashboard](screenshots/screenshotsevaluation-dashboard.png)
 
+## Problem Statement
+
+Large Language Models often generate responses that appear convincing while containing incorrect, unsupported, or fabricated information. This phenomenon, known as hallucination, remains a major challenge for deploying AI systems in domains that require reliability and trust.
+
+This project explores automated methods for evaluating response quality, detecting potential hallucinations, comparing multiple language models, and analyzing model behavior through quantitative and qualitative metrics.
+
+The objective is to provide a practical framework for studying model reliability rather than relying solely on subjective human evaluation.
+
 ## Overview
 
 ...
