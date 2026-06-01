@@ -1,7 +1,12 @@
 # AI Hallucination Evaluation and Reliability Analysis Framework 
 
+## Dashboard Preview
+
+![Evaluation Dashboard](screenshots/evaluation-dashboard.png)
+
 ## Overview
 
+...
 Large Language Models (LLMs) are capable of producing fluent and contextually relevant responses across a wide range of tasks. However, they may also generate factually incorrect, unsupported, or fabricated information while maintaining a high degree of linguistic confidence. This phenomenon, commonly referred to as *hallucination*, remains one of the primary barriers to deploying LLMs in high-trust environments.
 
 This project presents an experimental framework for evaluating the reliability of LLM-generated responses through a combination of reference-based scoring, semantic similarity analysis, hallucination assessment, and model benchmarking.
