@@ -1,72 +1,75 @@
-# AI Hallucination Evaluation and Reliability Analysis Framework 
-
-## Abstract
-
-Large Language Models (LLMs) have demonstrated remarkable capabilities across reasoning, question answering, summarization, and conversational tasks. Despite these advances, hallucinated outputs—responses that are factually incorrect, unsupported, or fabricated—remain a significant challenge for reliable deployment in real-world systems.
-
-This project presents an experimental evaluation framework for analyzing the reliability of LLM-generated responses through a combination of lexical metrics, semantic similarity analysis, hallucination assessment, benchmarking, and LLM-as-a-Judge evaluation. The framework supports multi-model comparison, historical performance tracking, benchmark execution, and automated quality assessment.
-
-The primary objective is to investigate how response quality, factual consistency, and model reliability can be measured systematically rather than relying solely on subjective human judgment. By combining multiple evaluation strategies within a unified platform, the framework provides insights into model behavior, strengths, weaknesses, and potential hallucination risks.
-
-This work serves as a foundation for future research in hallucination mitigation, multi-model verification, agent reliability assessment, and self-improving evaluation systems. 
-## Dashboard Preview
-
-The framework provides an interactive evaluation dashboard for comparing model responses, inspecting judge scores, and analyzing hallucination indicators.
-
-![Evaluation Dashboard](screenshots/screenshotsevaluation-dashboard.png)
-
-## Problem Statement
-
-Large Language Models often generate responses that appear convincing while containing incorrect, unsupported, or fabricated information. This phenomenon, known as hallucination, remains a major challenge for deploying AI systems in domains that require reliability and trust.
-
-This project explores automated methods for evaluating response quality, detecting potential hallucinations, comparing multiple language models, and analyzing model behavior through quantitative and qualitative metrics.
-
-The objective is to provide a practical framework for studying model reliability rather than relying solely on subjective human evaluation.
+# AI Hallucination Evaluation and Reliability Analysis Framework
 
 ## Overview
 
-...
-Large Language Models (LLMs) are capable of producing fluent and contextually relevant responses across a wide range of tasks. However, they may also generate factually incorrect, unsupported, or fabricated information while maintaining a high degree of linguistic confidence. This phenomenon, commonly referred to as *hallucination*, remains one of the primary barriers to deploying LLMs in high-trust environments.
+Large Language Models (LLMs) have demonstrated remarkable capabilities across reasoning, question answering, summarization, code generation, and conversational AI. Despite these advances, hallucinated outputs—responses that are factually incorrect, unsupported by evidence, or entirely fabricated—remain one of the most significant barriers to deploying LLMs in reliability-critical environments.
 
-This project presents an experimental framework for evaluating the reliability of LLM-generated responses through a combination of reference-based scoring, semantic similarity analysis, hallucination assessment, and model benchmarking.
+This project presents an experimental framework for evaluating the reliability and trustworthiness of LLM-generated responses through a combination of lexical evaluation metrics, semantic similarity analysis, hallucination assessment, benchmarking workflows, and LLM-as-a-Judge evaluation.
 
-The framework was developed to investigate a fundamental question:
+The framework was developed to investigate a fundamental research question:
 
-> How can we systematically measure whether an LLM response should be trusted?
+> How can we systematically evaluate whether an LLM-generated response should be trusted?
 
-Rather than relying on a single evaluation metric, the system combines multiple quantitative and qualitative evaluation strategies to provide a more comprehensive assessment of model behavior.
+Rather than relying on a single metric, the system combines multiple complementary evaluation strategies to provide a more comprehensive view of response quality, factual consistency, and model reliability.
 
 ---
 
-## Motivation
+## Dashboard Preview
 
-Current evaluation methods often focus on lexical overlap metrics such as BLEU and ROUGE. While useful, these metrics do not adequately capture factual correctness, reasoning quality, or semantic faithfulness.
+The framework provides an interactive dashboard for evaluating, benchmarking, and comparing responses from multiple language models.
 
-Modern language models frequently generate responses that appear plausible but contain inaccurate information. Detecting such failures remains a challenging research problem.
+### Model Evaluation Dashboard
 
-This project explores methods for:
+![Evaluation Dashboard](screenshots/evaluation-dashboard.png)
 
-* Evaluating response quality across multiple dimensions.
-* Identifying potential hallucinations through external reference comparison.
-* Benchmarking multiple language models under identical conditions.
-* Tracking model reliability over time.
-* Building a foundation for future agent reliability and safety evaluation systems.
+---
+
+## Key Features
+
+### Multi-Model Evaluation
+
+Evaluate and compare responses generated by multiple language models under identical prompts and evaluation criteria.
+
+### Hallucination Analysis
+
+Assess factual consistency by comparing generated responses against external reference information and measuring semantic alignment.
+
+### LLM-as-a-Judge Scoring
+
+Automatically evaluate responses using higher-level dimensions such as:
+
+* Factual Accuracy
+* Completeness
+* Clarity
+* Reasoning Quality
+
+### Benchmark Execution
+
+Run benchmark datasets across multiple models and compare performance using standardized evaluation metrics.
+
+### Historical Analytics
+
+Store evaluation results and benchmark outcomes for long-term performance analysis and trend monitoring.
+
+### Failure Pattern Tracking
+
+Identify recurring weaknesses and failure modes across different prompt categories and models.
 
 ---
 
 ## Research Objectives
 
-The project investigates several practical and research-oriented questions:
+This project investigates several practical and research-oriented questions:
 
 1. Can semantic similarity metrics be used to estimate factual consistency?
 
-2. How frequently do different language models hallucinate under identical prompts?
+2. How frequently do different language models hallucinate under identical evaluation conditions?
 
-3. Can model-specific performance profiles be constructed using historical benchmark data?
+3. Can model-specific reliability profiles be constructed using historical benchmark data?
 
-4. To what extent does agreement between multiple models correlate with response reliability?
+4. Does agreement between multiple models correlate with response reliability?
 
-5. Can automated evaluation frameworks reduce the need for manual assessment of model outputs?
+5. Can automated evaluation systems reduce dependence on manual assessment of LLM outputs?
 
 ---
 
@@ -86,8 +89,8 @@ Response Collection
     │
     ▼
 Evaluation Engine
-├── BLEU
-├── ROUGE
+├── BLEU Score
+├── ROUGE Score
 ├── Semantic Similarity
 ├── Keyword Overlap
 └── Composite Score
@@ -95,8 +98,8 @@ Evaluation Engine
     ▼
 Hallucination Analysis
 ├── Reference Comparison
-├── Consistency Check
 ├── Evidence Alignment
+├── Consistency Verification
 └── Risk Assessment
     │
     ▼
@@ -113,222 +116,81 @@ Database Storage
 Analytics Dashboard
 ```
 
+---
+
 ## Evaluation Methodology
 
 The framework evaluates model responses using multiple complementary metrics rather than relying on a single score.
 
-## Results and Findings
-
-Initial experiments were conducted using multiple open-weight language models under identical evaluation conditions.
-
-### Comparative Evaluation
-
-| Model | Final Score | Accuracy | Completeness | Clarity | Reasoning |
-|---------|---------|---------|---------|---------|---------|
-| DeepSeek V3 | 90 | 9 | 9 | 8 | 9 |
-| Llama | 82 | 8 | 8 | 9 | 8 |
-| Qwen | 82 | 8 | 8 | 9 | 8 |
-
-### Key Observations
-
-- DeepSeek V3 consistently achieved the highest overall evaluation scores.
-- Llama produced concise and clear responses but occasionally lacked depth.
-- Qwen demonstrated strong readability but sometimes omitted supporting examples.
-- Higher semantic similarity generally correlated with stronger judge scores.
-- Agreement between multiple models appeared to be a useful indicator of response reliability.
-
-### Current Limitations
-
-The current evaluation framework should be interpreted as a decision-support tool rather than a definitive measure of factual correctness.
-
-Important limitations include:
-
-- Semantic similarity does not guarantee factual accuracy.
-- Judge models may introduce evaluation bias.
-- Hallucination detection remains probabilistic.
-- Reference quality directly influences evaluation quality.
-
-## Future Work
-
-The current framework establishes a foundation for reliability analysis of large language models. Several extensions are planned to improve evaluation depth, scalability, and factual verification capabilities.
-
-### Hallucination Research
-
-- Retrieval-Augmented Verification (RAV)
-- Multi-source evidence validation
-- Confidence calibration analysis
-- Claim-level fact verification
-- Citation-grounded response evaluation
-
-### Multi-Model Verification
-
-Future versions will investigate consensus-based answer validation.
-
-Potential approaches include:
-
-- Majority-vote verification
-- Debate-based verification
-- Self-consistency sampling
-- Cross-model critique pipelines
-- Ensemble reliability scoring
-
-### Evaluation Infrastructure
-
-Planned infrastructure improvements include:
-
-- PostgreSQL migration
-- SQLAlchemy integration
-- Docker deployment
-- Automated PDF report generation
-- Benchmark dataset management
-
-### Safety and Robustness
-
-Future benchmarking modules will include:
-
-- Adversarial prompt testing
-- Prompt injection resistance
-- Jailbreak evaluation
-- Safety compliance scoring
-- Agent reliability assessment
-
-### Self-Improving Evaluation Systems
-
-A long-term objective is to develop evaluation systems capable of learning from historical failures and adapting evaluation strategies over time.
-
-This would enable:
-
-- Failure pattern discovery
-- Dynamic benchmark generation
-- Automated evaluator refinement
-- Reliability trend forecasting
 ### Lexical Metrics
 
-**BLEU Score**
+#### BLEU Score
 
 Measures n-gram overlap between generated and reference responses.
 
-**ROUGE Score**
+#### ROUGE Score
 
 Measures recall-oriented overlap and content coverage.
 
 ### Semantic Metrics
 
-**Semantic Similarity**
+#### Semantic Similarity
 
 Computes embedding-based similarity between generated responses and reference answers to capture meaning beyond exact wording.
 
-**Keyword Consistency**
+#### Keyword Overlap
 
-Measures the preservation of critical concepts and entities.
+Measures preservation of important concepts and entities.
 
 ### Hallucination Assessment
 
 The hallucination analysis pipeline estimates factual reliability through:
 
-- Reference comparison
-- Semantic alignment analysis
-- Evidence consistency checks
-- Confidence estimation
+* Reference retrieval
+* Semantic alignment analysis
+* Evidence consistency checks
+* Hallucination risk estimation
 
 ### LLM-as-a-Judge Evaluation
 
 A judge model evaluates responses across four dimensions:
 
-| Dimension | Description |
-|------------|------------|
-| Accuracy | Factual correctness |
-| Completeness | Coverage of important information |
-| Clarity | Readability and communication quality |
-| Reasoning | Logical consistency and explanation quality |
+| Dimension    | Description                                 |
+| ------------ | ------------------------------------------- |
+| Accuracy     | Factual correctness                         |
+| Completeness | Coverage of relevant information            |
+| Clarity      | Readability and communication quality       |
+| Reasoning    | Logical consistency and explanation quality |
 
-The individual scores are aggregated into a final evaluation score used for model ranking.
-### 1. Model Execution Layer
-
-Responsible for querying one or more language models and collecting generated responses.
-
-Current implementation supports multiple model providers through a unified interface, allowing direct comparison between model outputs.
-
-### 2. Evaluation Layer
-
-Computes response quality metrics using both lexical and semantic approaches.
-
-Implemented metrics include:
-
-* Exact Match
-* BLEU Score
-* ROUGE Score
-* Semantic Similarity
-* Keyword Overlap
-* Composite Evaluation Score
-
-These metrics provide complementary perspectives on response quality.
-
-### 3. Hallucination Analysis Layer
-
-Evaluates factual consistency by comparing generated responses against external reference information.
-
-The workflow consists of:
-
-1. Retrieving reference information.
-2. Comparing model output with retrieved evidence.
-3. Measuring semantic alignment.
-4. Estimating hallucination likelihood.
-5. Producing an interpretable hallucination assessment.
-
-### 4. Benchmarking and Analytics Layer
-
-Maintains historical records of model performance and evaluation outcomes.
-
-Capabilities include:
-
-* Benchmark execution
-* Historical result tracking
-* Category-specific performance analysis
-* Model ranking
-* Failure pattern identification
+The individual scores are aggregated into a final evaluation score used for ranking and benchmarking.
 
 ---
 
-## Methodology
+## Experimental Results
 
-### Response Evaluation
+The framework supports comparative evaluation of multiple language models under identical conditions.
 
-Generated responses are compared against reference answers using a combination of lexical and semantic metrics.
+### Example Benchmark Results
 
-The objective is not to optimize for a single score but rather to obtain a balanced view of response quality.
+| Model       | Final Score | Accuracy | Completeness | Clarity | Reasoning |
+| ----------- | ----------- | -------- | ------------ | ------- | --------- |
+| DeepSeek V3 | 90          | 9        | 9            | 8       | 9         |
+| Llama       | 82          | 8        | 8            | 9       | 8         |
+| Qwen        | 82          | 8        | 8            | 9       | 8         |
 
-### Hallucination Detection
+### Observations
 
-The hallucination analysis pipeline compares generated responses with external reference material and computes:
-
-* Semantic Alignment
-* Keyword Consistency
-* Hallucination Score
-* Final Verification Verdict
-
-### LLM-as-a-Judge Evaluation
-
-A secondary evaluation mechanism assesses responses using higher-level criteria such as:
-
-* Factual Accuracy
-* Completeness
-* Clarity
-* Reasoning Quality
-
-These dimensions are aggregated into a final evaluation score.
-
-### Performance Profiling
-
-Evaluation results are stored and aggregated to construct model performance profiles across different prompt categories.
-
-This enables long-term comparison of model strengths and weaknesses.
+* DeepSeek V3 consistently achieved the highest overall evaluation scores during initial experiments.
+* Llama generated concise and readable responses but occasionally lacked depth.
+* Qwen demonstrated strong clarity while sometimes omitting supporting details.
+* Higher semantic similarity often correlated with stronger judge scores.
+* Multi-model agreement appeared to be a useful indicator of response reliability.
 
 ---
 
 ## Database Design
 
-The current system maintains structured records for:
+The current implementation maintains structured records for:
 
 ### Evaluations
 
@@ -336,11 +198,11 @@ Stores response quality metrics and overall evaluation scores.
 
 ### Hallucination Tests
 
-Stores reference information, hallucination assessments, and verification results.
+Stores reference information, semantic alignment scores, hallucination assessments, and verification outcomes.
 
 ### Judge Evaluations
 
-Stores qualitative scoring dimensions and model rankings.
+Stores qualitative scoring dimensions and ranking information.
 
 ### Benchmark Runs
 
@@ -348,9 +210,44 @@ Stores benchmark metadata and aggregated benchmark results.
 
 ### Failure Patterns
 
-Stores detected failure cases and observed reliability issues.
+Stores observed reliability failures and categorized model weaknesses.
 
-The database design supports future migration from SQLite to PostgreSQL without significant architectural changes.
+The current implementation uses SQLite and is designed to support future migration to PostgreSQL with minimal architectural changes.
+
+---
+
+## Technology Stack
+
+### Backend
+
+* Python
+* FastAPI
+
+### Frontend
+
+* React
+* Vite
+
+### Database
+
+* SQLite
+
+### NLP & Evaluation
+
+* Sentence Transformers
+* BLEU
+* ROUGE
+
+### Model Evaluation
+
+* LLM-as-a-Judge Evaluation
+* Semantic Similarity Analysis
+* Hallucination Assessment
+
+### Visualization
+
+* Recharts
+* Interactive Analytics Dashboard
 
 ---
 
@@ -371,6 +268,9 @@ ai-hallucination-detector/
 │   ├── public/
 │   └── package.json
 │
+├── screenshots/
+│   └── evaluation-dashboard.png
+│
 ├── requirements.txt
 ├── start.bat
 └── README.md
@@ -380,7 +280,7 @@ ai-hallucination-detector/
 
 ## Installation
 
-### Backend
+### Backend Setup
 
 Create a virtual environment:
 
@@ -406,7 +306,7 @@ Create a `.env` file:
 HF_API_TOKEN=YOUR_TOKEN
 ```
 
-Start the backend server:
+Run the backend:
 
 ```bash
 uvicorn app.main:app --reload
@@ -414,68 +314,76 @@ uvicorn app.main:app --reload
 
 ---
 
-### Frontend
-
-Install frontend dependencies:
+### Frontend Setup
 
 ```bash
 cd frontend
 npm install
+npm run dev
 ```
 
-Run the frontend:
+Open:
 
-```bash
-npm run dev
+```text
+http://localhost:5173
 ```
 
 ---
 
 ## Current Limitations
 
-The current implementation serves as an experimental evaluation platform and has several limitations.
+The framework should be interpreted as an evaluation and decision-support system rather than a definitive measure of factual correctness.
 
-* Semantic agreement does not guarantee factual correctness.
-* Retrieved references may contain incomplete information.
-* LLM-based evaluation can introduce evaluator bias.
-* Hallucination detection remains probabilistic rather than deterministic.
-* Domain-specific verification has not yet been fully explored.
+Current limitations include:
 
-These limitations motivate future work on retrieval-grounded verification and multi-model consensus systems.
+* Semantic similarity does not guarantee factual accuracy.
+* Hallucination detection remains probabilistic.
+* Reference quality directly affects evaluation quality.
+* Judge models may introduce evaluator bias.
+* Domain-specific verification workflows remain limited.
 
 ---
 
 ## Future Work
 
-Planned extensions include:
+### Hallucination Research
 
-### Evaluation
+* Retrieval-Augmented Verification
+* Multi-source evidence validation
+* Claim-level fact verification
+* Citation-grounded evaluation
+* Confidence calibration analysis
 
-* Adversarial prompt testing
-* Safety benchmarking
-* Robustness evaluation
-* Confidence calibration
+### Multi-Model Verification
+
+* Consensus-based answer validation
+* Majority-vote verification
+* Debate-based evaluation
+* Cross-model critique pipelines
+* Ensemble reliability scoring
 
 ### Infrastructure
 
 * PostgreSQL migration
 * SQLAlchemy integration
-* Automated report generation
 * Docker deployment
+* Automated PDF report generation
+* CI/CD pipelines
 
-### Reliability Research
+### Safety and Robustness
 
-* Multi-model verification pipelines
-* Consensus-based answer synthesis
-* Agent reliability scoring
-* Self-improving evaluation systems
+* Adversarial prompt testing
+* Prompt injection resistance
+* Jailbreak evaluation
+* Safety benchmarking
+* Agent reliability assessment
 
-### Benchmarking
+### Self-Improving Evaluation Systems
 
-* Standardized benchmark datasets
-* Statistical significance analysis
-* Longitudinal performance tracking
-* Failure taxonomy development
+* Failure pattern discovery
+* Dynamic benchmark generation
+* Automated evaluator refinement
+* Reliability trend forecasting
 
 ---
 
@@ -509,6 +417,6 @@ Huang, L. et al. (2025)
 
 **Prateek Dhamangave**
 
-B.Tech – Artificial Intelligence and Data Science
+B.Tech — Artificial Intelligence and Data Science
 
-This repository is an ongoing exploration of reliability, evaluation, and trustworthiness in large language model systems.
+This repository represents an ongoing exploration of reliability, evaluation methodologies, and trustworthiness in large language model systems, with a focus on hallucination analysis, automated benchmarking, and model reliability assessment.
