@@ -108,6 +108,37 @@ Analytics Dashboard
 
 The framework evaluates model responses using multiple complementary metrics rather than relying on a single score.
 
+## Results and Findings
+
+Initial experiments were conducted using multiple open-weight language models under identical evaluation conditions.
+
+### Comparative Evaluation
+
+| Model | Final Score | Accuracy | Completeness | Clarity | Reasoning |
+|---------|---------|---------|---------|---------|---------|
+| DeepSeek V3 | 90 | 9 | 9 | 8 | 9 |
+| Llama | 82 | 8 | 8 | 9 | 8 |
+| Qwen | 82 | 8 | 8 | 9 | 8 |
+
+### Key Observations
+
+- DeepSeek V3 consistently achieved the highest overall evaluation scores.
+- Llama produced concise and clear responses but occasionally lacked depth.
+- Qwen demonstrated strong readability but sometimes omitted supporting examples.
+- Higher semantic similarity generally correlated with stronger judge scores.
+- Agreement between multiple models appeared to be a useful indicator of response reliability.
+
+### Current Limitations
+
+The current evaluation framework should be interpreted as a decision-support tool rather than a definitive measure of factual correctness.
+
+Important limitations include:
+
+- Semantic similarity does not guarantee factual accuracy.
+- Judge models may introduce evaluation bias.
+- Hallucination detection remains probabilistic.
+- Reference quality directly influences evaluation quality.
+
 ### Lexical Metrics
 
 **BLEU Score**
