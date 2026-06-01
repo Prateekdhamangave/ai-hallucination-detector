@@ -104,6 +104,51 @@ Database Storage
 Analytics Dashboard
 ```
 
+## Evaluation Methodology
+
+The framework evaluates model responses using multiple complementary metrics rather than relying on a single score.
+
+### Lexical Metrics
+
+**BLEU Score**
+
+Measures n-gram overlap between generated and reference responses.
+
+**ROUGE Score**
+
+Measures recall-oriented overlap and content coverage.
+
+### Semantic Metrics
+
+**Semantic Similarity**
+
+Computes embedding-based similarity between generated responses and reference answers to capture meaning beyond exact wording.
+
+**Keyword Consistency**
+
+Measures the preservation of critical concepts and entities.
+
+### Hallucination Assessment
+
+The hallucination analysis pipeline estimates factual reliability through:
+
+- Reference comparison
+- Semantic alignment analysis
+- Evidence consistency checks
+- Confidence estimation
+
+### LLM-as-a-Judge Evaluation
+
+A judge model evaluates responses across four dimensions:
+
+| Dimension | Description |
+|------------|------------|
+| Accuracy | Factual correctness |
+| Completeness | Coverage of important information |
+| Clarity | Readability and communication quality |
+| Reasoning | Logical consistency and explanation quality |
+
+The individual scores are aggregated into a final evaluation score used for model ranking.
 ### 1. Model Execution Layer
 
 Responsible for querying one or more language models and collecting generated responses.
