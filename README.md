@@ -20,8 +20,7 @@ The framework provides an interactive dashboard for evaluating, benchmarking, an
 
 ### Model Evaluation Dashboard
 
-![Evaluation Dashboard](screenshots/evaluation-dashboard.png)
-
+![Evaluation Dashboard](screenshots/screenshotsevaluation-dashboard.png)
 ---
 
 ## Key Features
