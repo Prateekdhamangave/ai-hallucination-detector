@@ -139,6 +139,60 @@ Important limitations include:
 - Hallucination detection remains probabilistic.
 - Reference quality directly influences evaluation quality.
 
+## Future Work
+
+The current framework establishes a foundation for reliability analysis of large language models. Several extensions are planned to improve evaluation depth, scalability, and factual verification capabilities.
+
+### Hallucination Research
+
+- Retrieval-Augmented Verification (RAV)
+- Multi-source evidence validation
+- Confidence calibration analysis
+- Claim-level fact verification
+- Citation-grounded response evaluation
+
+### Multi-Model Verification
+
+Future versions will investigate consensus-based answer validation.
+
+Potential approaches include:
+
+- Majority-vote verification
+- Debate-based verification
+- Self-consistency sampling
+- Cross-model critique pipelines
+- Ensemble reliability scoring
+
+### Evaluation Infrastructure
+
+Planned infrastructure improvements include:
+
+- PostgreSQL migration
+- SQLAlchemy integration
+- Docker deployment
+- Automated PDF report generation
+- Benchmark dataset management
+
+### Safety and Robustness
+
+Future benchmarking modules will include:
+
+- Adversarial prompt testing
+- Prompt injection resistance
+- Jailbreak evaluation
+- Safety compliance scoring
+- Agent reliability assessment
+
+### Self-Improving Evaluation Systems
+
+A long-term objective is to develop evaluation systems capable of learning from historical failures and adapting evaluation strategies over time.
+
+This would enable:
+
+- Failure pattern discovery
+- Dynamic benchmark generation
+- Automated evaluator refinement
+- Reliability trend forecasting
 ### Lexical Metrics
 
 **BLEU Score**
