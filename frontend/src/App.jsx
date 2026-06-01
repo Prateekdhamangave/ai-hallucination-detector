@@ -263,7 +263,7 @@ export default function App() {
 
         {/* Header */}
         <div style={{ marginBottom: 28, borderBottom: `1px solid ${theme.border}`, paddingBottom: 20 }}>
-          <h1 style={{ color: theme.text, margin: 0, fontSize: 26 }}>🤖 AI Agent Evaluator</h1>
+          <h1 style={{ color: theme.text, margin: 0, fontSize: 26 }}> AI Agent Evaluator</h1>
           <p style={{ color: theme.secondary, marginTop: 6, fontSize: 13 }}>
             Self-Improving AI Evaluation Platform · LLM-as-Judge · PostgreSQL · Safety · Robustness · Benchmark
           </p>
@@ -271,24 +271,24 @@ export default function App() {
 
         {/* Tabs */}
         <div style={{ display: "flex", gap: 8, marginBottom: 24, flexWrap: "wrap" }}>
-          <button style={tabStyle("evaluate")} onClick={() => setActiveTab("evaluate")}>⚡ Evaluate</button>
-          <button style={tabStyle("benchmark")} onClick={() => { setActiveTab("benchmark"); handleBenchmarkHistory(); }}>📊 Benchmark</button>
-          <button style={tabStyle("safety")} onClick={() => setActiveTab("safety")}>🛡️ Safety</button>
-          <button style={tabStyle("robustness")} onClick={() => setActiveTab("robustness")}>🔁 Robustness</button>
-          <button style={tabStyle("profiles")} onClick={() => { setActiveTab("profiles"); handleLoadProfiles(); }}>🧠 Profiles</button>
-          <button style={tabStyle("history")} onClick={() => { setActiveTab("history"); handleHistory(); }}>📜 History</button>
+          <button style={tabStyle("evaluate")} onClick={() => setActiveTab("evaluate")}> Evaluate</button>
+          <button style={tabStyle("benchmark")} onClick={() => { setActiveTab("benchmark"); handleBenchmarkHistory(); }}> Benchmark</button>
+          <button style={tabStyle("safety")} onClick={() => setActiveTab("safety")}>Safety</button>
+          <button style={tabStyle("robustness")} onClick={() => setActiveTab("robustness")}> Robustness</button>
+          <button style={tabStyle("profiles")} onClick={() => { setActiveTab("profiles"); handleLoadProfiles(); }}> Profiles</button>
+          <button style={tabStyle("history")} onClick={() => { setActiveTab("history"); handleHistory(); }}> History</button>
         </div>
 
         {/* Global Download Buttons */}
         <div style={{ display: "flex", gap: 10, marginBottom: 28, flexWrap: "wrap" }}>
           <a href={`${API}/download/pdf`} target="_blank" rel="noreferrer">
-            <button style={{ ...btnStyle("#f87171"), fontSize: 12, padding: "8px 16px" }}>📄 Download PDF</button>
+            <button style={{ ...btnStyle("#f87171"), fontSize: 12, padding: "8px 16px" }}> Download PDF</button>
           </a>
           <a href={`${API}/download/csv`} target="_blank" rel="noreferrer">
-            <button style={{ ...btnStyle("#4ade80"), fontSize: 12, padding: "8px 16px" }}>📊 Download CSV</button>
+            <button style={{ ...btnStyle("#4ade80"), fontSize: 12, padding: "8px 16px" }}> Download CSV</button>
           </a>
           <a href={`${API}/download/json`} target="_blank" rel="noreferrer">
-            <button style={{ ...btnStyle("#818cf8"), fontSize: 12, padding: "8px 16px" }}>🔷 Download JSON</button>
+            <button style={{ ...btnStyle("#818cf8"), fontSize: 12, padding: "8px 16px" }}> Download JSON</button>
           </a>
         </div>
 
@@ -296,7 +296,7 @@ export default function App() {
         {activeTab === "evaluate" && (
           <>
             <div style={{ background: theme.surface, padding: 24, borderRadius: 12, marginBottom: 28, border: `1px solid ${theme.border}` }}>
-              <h2 style={{ color: theme.accent, marginTop: 0, fontSize: 17 }}>⚡ Ask Any Question</h2>
+              <h2 style={{ color: theme.accent, marginTop: 0, fontSize: 17 }}> Ask Any Question</h2>
               <p style={{ color: theme.secondary, fontSize: 13, marginTop: -8 }}>
                 Judge LLM automatically evaluates all responses · Prompt category auto-detected · Saved to PostgreSQL
               </p>
@@ -305,14 +305,14 @@ export default function App() {
                 value={prompt} onChange={(e) => setPrompt(e.target.value)}
                 placeholder="e.g. What is machine learning? Explain quantum computing. Who was Nikola Tesla?" />
               <button onClick={handleEvaluate} disabled={loading} style={btnStyle(theme.accent, loading)}>
-                {loading ? "⏳ Querying Models + Running Judge..." : "▶ Evaluate All Models"}
+                {loading ? " Querying Models + Running Judge..." : " Evaluate All Models"}
               </button>
             </div>
 
             {judge && (
               <div style={{ background: "#0d1a0d", border: "1px solid #4ade80", borderRadius: 12, padding: 20, marginBottom: 20 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 8 }}>
-                  <span style={{ fontSize: 28 }}>🏆</span>
+                  <span style={{ fontSize: 28 }}></span>
                   <div>
                     <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
                       <p style={{ color: "#4ade80", fontWeight: "bold", margin: 0, fontSize: 16 }}>
@@ -331,14 +331,14 @@ export default function App() {
 
             {results && (
               <>
-                <h2 style={{ color: theme.accent, fontSize: 17, marginBottom: 16 }}>🧠 Model Responses & Judge Scores</h2>
+                <h2 style={{ color: theme.accent, fontSize: 17, marginBottom: 16 }}> Model Responses & Judge Scores</h2>
                 <div style={{ display: "flex", gap: 16, marginBottom: 30, flexWrap: "wrap" }}>
                   {Object.entries(results).map(([model, data], idx) => {
                     const isWinner = judge?.winner === model;
                     return (
                       <div key={model} style={{ flex: "1 1 320px", background: theme.surface, border: `1px solid ${isWinner ? "#4ade80" : theme.border}`, borderRadius: 12, padding: 20, boxShadow: isWinner ? "0 0 20px rgba(74,222,128,0.1)" : "none" }}>
                         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-                          <h3 style={{ color: modelColors[idx] || theme.accent, margin: 0, fontSize: 15 }}>🧠 {model} {isWinner ? "🏆" : ""}</h3>
+                          <h3 style={{ color: modelColors[idx] || theme.accent, margin: 0, fontSize: 15 }}> {model} {isWinner ? "" : ""}</h3>
                           {data.latency && <span style={{ color: theme.textMuted, fontSize: 11 }}>⏱ {data.latency}s</span>}
                         </div>
                         <div style={{ textAlign: "center", marginBottom: 16, padding: 12, background: theme.card, borderRadius: 8 }}>
@@ -356,13 +356,13 @@ export default function App() {
                         </div>
                         {data.judge_scores?.strengths && (
                           <div style={{ background: "#0d1a0d", border: "1px solid #1a3a1a", borderRadius: 8, padding: 10, marginBottom: 8 }}>
-                            <span style={{ color: "#4ade80", fontSize: 11, fontWeight: "bold" }}>✅ STRENGTH: </span>
+                            <span style={{ color: "#4ade80", fontSize: 11, fontWeight: "bold" }}> STRENGTH: </span>
                             <span style={{ color: theme.secondary, fontSize: 12 }}>{data.judge_scores.strengths}</span>
                           </div>
                         )}
                         {data.judge_scores?.weaknesses && (
                           <div style={{ background: "#1a0d0d", border: "1px solid #3a1a1a", borderRadius: 8, padding: 10, marginBottom: 14 }}>
-                            <span style={{ color: "#f87171", fontSize: 11, fontWeight: "bold" }}>⚠️ WEAKNESS: </span>
+                            <span style={{ color: "#f87171", fontSize: 11, fontWeight: "bold" }}> WEAKNESS: </span>
                             <span style={{ color: theme.secondary, fontSize: 12 }}>{data.judge_scores.weaknesses}</span>
                           </div>
                         )}
@@ -374,7 +374,7 @@ export default function App() {
                   })}
                 </div>
 
-                <h2 style={{ color: theme.accent, fontSize: 17, marginBottom: 16 }}>📊 Judge Score Comparison</h2>
+                <h2 style={{ color: theme.accent, fontSize: 17, marginBottom: 16 }}>Judge Score Comparison</h2>
                 <div style={{ background: theme.surface, padding: 20, borderRadius: 12, border: `1px solid ${theme.border}`, marginBottom: 28 }}>
                   <ResponsiveContainer width="100%" height={300}>
                     <BarChart data={getBarChartData()}>
@@ -392,7 +392,7 @@ export default function App() {
                   </ResponsiveContainer>
                 </div>
 
-                <h2 style={{ color: theme.accent, fontSize: 17, marginBottom: 16 }}>📋 Full Comparison Table</h2>
+                <h2 style={{ color: theme.accent, fontSize: 17, marginBottom: 16 }}> Full Comparison Table</h2>
                 <div style={{ background: theme.surface, borderRadius: 12, border: `1px solid ${theme.border}`, overflow: "auto", marginBottom: 30 }}>
                   <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 800 }}>
                     <thead>
@@ -405,7 +405,7 @@ export default function App() {
                     <tbody>
                       {Object.entries(results).map(([model, data]) => (
                         <tr key={model} style={{ textAlign: "center", borderBottom: `1px solid ${theme.border}` }}>
-                          <td style={{ padding: 12, fontWeight: "bold", color: judge?.winner === model ? "#4ade80" : theme.text }}>{model} {judge?.winner === model ? "🏆" : ""}</td>
+                          <td style={{ padding: 12, fontWeight: "bold", color: judge?.winner === model ? "#4ade80" : theme.text }}>{model} {judge?.winner === model ? "" : ""}</td>
                           <td style={{ padding: 12, fontWeight: "bold", color: getScoreColor(data.judge_scores?.final_score, 100) }}>{data.judge_scores?.final_score ?? 0}</td>
                           <td style={{ padding: 12, color: getScoreColor(data.judge_scores?.factual_accuracy) }}>{data.judge_scores?.factual_accuracy ?? 0}</td>
                           <td style={{ padding: 12, color: getScoreColor(data.judge_scores?.completeness) }}>{data.judge_scores?.completeness ?? 0}</td>
@@ -428,13 +428,13 @@ export default function App() {
         {activeTab === "benchmark" && (
           <div>
             <div style={{ background: theme.surface, padding: 24, borderRadius: 12, marginBottom: 28, border: "1px solid #2e3a4e" }}>
-              <h2 style={{ color: "#818cf8", marginTop: 0, fontSize: 17 }}>📊 Benchmark Dataset Evaluation</h2>
+              <h2 style={{ color: "#818cf8", marginTop: 0, fontSize: 17 }}> Benchmark Dataset Evaluation</h2>
               <p style={{ color: theme.secondary, fontSize: 13, marginTop: -8, lineHeight: 1.7 }}>
                 Upload a CSV file with a <strong style={{ color: theme.primary }}>"prompt"</strong> or <strong style={{ color: theme.primary }}>"question"</strong> column.
                 System evaluates all questions across all models automatically.
               </p>
               <div style={{ background: theme.card, padding: 14, borderRadius: 8, marginBottom: 16, border: `1px solid ${theme.border}` }}>
-                <p style={{ color: theme.secondary, fontSize: 12, margin: 0, marginBottom: 8 }}>📋 Your CSV should look like this:</p>
+                <p style={{ color: theme.secondary, fontSize: 12, margin: 0, marginBottom: 8 }}> Your CSV should look like this:</p>
                 <code style={{ color: "#4ade80", fontSize: 12, lineHeight: 2 }}>
                   prompt<br />
                   What is machine learning?<br />
@@ -446,19 +446,19 @@ export default function App() {
                 onChange={(e) => setBenchmarkFile(e.target.files[0])}
                 style={{ display: "none" }} id="csv-upload" />
               <label htmlFor="csv-upload" style={{ ...btnStyle("#818cf8"), display: "inline-block", marginRight: 12, cursor: "pointer" }}>
-                📁 Choose CSV File
+                  Choose CSV File
               </label>
-              {benchmarkFile && <span style={{ color: "#4ade80", fontSize: 13 }}>✅ {benchmarkFile.name}</span>}
+              {benchmarkFile && <span style={{ color: "#4ade80", fontSize: 13 }}> {benchmarkFile.name}</span>}
               <br /><br />
               <button onClick={handleBenchmark} disabled={benchmarkLoading || !benchmarkFile}
                 style={btnStyle("#818cf8", benchmarkLoading || !benchmarkFile)}>
-                {benchmarkLoading ? "⏳ Running Benchmark... (may take several minutes)" : "🚀 Run Full Benchmark"}
+                {benchmarkLoading ? " Running Benchmark... (may take several minutes)" : " Run Full Benchmark"}
               </button>
             </div>
 
             {benchmarkResults && (
               <>
-                <h2 style={{ color: "#818cf8", fontSize: 17, marginBottom: 16 }}>🏆 Benchmark Results</h2>
+                <h2 style={{ color: "#818cf8", fontSize: 17, marginBottom: 16 }}> Benchmark Results</h2>
                 <div style={{ display: "flex", gap: 16, marginBottom: 28, flexWrap: "wrap" }}>
                   <div style={{ flex: "1 1 180px", background: theme.surface, border: "1px solid #818cf8", borderRadius: 12, padding: 20, textAlign: "center" }}>
                     <div style={{ color: theme.secondary, fontSize: 12 }}>TOTAL QUESTIONS</div>
@@ -473,7 +473,7 @@ export default function App() {
                       <div style={{ color: theme.secondary, fontSize: 12 }}>{model.toUpperCase()}</div>
                       <div style={{ color: modelColors[idx] || theme.accent, fontWeight: "bold", fontSize: 32, marginTop: 8 }}>{score}</div>
                       <div style={{ color: theme.textMuted, fontSize: 11 }}>avg score</div>
-                      <div style={{ color: theme.secondary, fontSize: 12, marginTop: 4 }}>🏆 {benchmarkResults.model_wins?.[model] ?? 0} wins</div>
+                      <div style={{ color: theme.secondary, fontSize: 12, marginTop: 4 }}> {benchmarkResults.model_wins?.[model] ?? 0} wins</div>
                     </div>
                   ))}
                 </div>
@@ -490,7 +490,7 @@ export default function App() {
                   </ResponsiveContainer>
                 </div>
 
-                <h2 style={{ color: "#818cf8", fontSize: 17, marginBottom: 16 }}>📋 Per Question Results</h2>
+                <h2 style={{ color: "#818cf8", fontSize: 17, marginBottom: 16 }}> Per Question Results</h2>
                 <div style={{ background: theme.surface, borderRadius: 12, border: `1px solid ${theme.border}`, overflow: "auto", marginBottom: 28 }}>
                   <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 700 }}>
                     <thead>
@@ -523,7 +523,7 @@ export default function App() {
             {/* ── PAST BENCHMARK RUNS ── */}
             {benchmarkHistory.length > 0 && (
               <>
-                <h2 style={{ color: "#818cf8", fontSize: 17, marginBottom: 16 }}>📜 Past Benchmark Runs</h2>
+                <h2 style={{ color: "#818cf8", fontSize: 17, marginBottom: 16 }}> Past Benchmark Runs</h2>
                 <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                   {(benchmarkHistory || []).map((run) => (
                     <div key={run.id} style={{ background: theme.surface, border: `1px solid ${theme.border}`, borderRadius: 12, overflow: "hidden" }}>
@@ -541,13 +541,13 @@ export default function App() {
                         {/* Download buttons per run */}
                         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                           <a href={`${API}/download/benchmark/pdf/${run.id}`} target="_blank" rel="noreferrer">
-                            <button style={{ background: "#f87171", color: "#0f0f0f", padding: "7px 14px", border: "none", borderRadius: 6, fontSize: 11, fontWeight: "bold", cursor: "pointer" }}>📄 PDF Report</button>
+                            <button style={{ background: "#f87171", color: "#0f0f0f", padding: "7px 14px", border: "none", borderRadius: 6, fontSize: 11, fontWeight: "bold", cursor: "pointer" }}> PDF Report</button>
                           </a>
                           <a href={`${API}/download/benchmark/csv/${run.id}`} target="_blank" rel="noreferrer">
-                            <button style={{ background: "#4ade80", color: "#0f0f0f", padding: "7px 14px", border: "none", borderRadius: 6, fontSize: 11, fontWeight: "bold", cursor: "pointer" }}>📊 CSV Report</button>
+                            <button style={{ background: "#4ade80", color: "#0f0f0f", padding: "7px 14px", border: "none", borderRadius: 6, fontSize: 11, fontWeight: "bold", cursor: "pointer" }}> CSV Report</button>
                           </a>
                           <a href={`${API}/download/benchmark/json/${run.id}`} target="_blank" rel="noreferrer">
-                            <button style={{ background: "#818cf8", color: "#0f0f0f", padding: "7px 14px", border: "none", borderRadius: 6, fontSize: 11, fontWeight: "bold", cursor: "pointer" }}>🔷 JSON Report</button>
+                            <button style={{ background: "#818cf8", color: "#0f0f0f", padding: "7px 14px", border: "none", borderRadius: 6, fontSize: 11, fontWeight: "bold", cursor: "pointer" }}> JSON Report</button>
                           </a>
                         </div>
                       </div>
@@ -579,13 +579,13 @@ export default function App() {
                 Tests all models against <strong style={{ color: theme.primary }}>8 adversarial prompts</strong> including jailbreaks, harmful requests, prompt injections.
               </p>
               <button onClick={handleSafetyTest} disabled={safetyLoading} style={btnStyle("#f87171", safetyLoading)}>
-                {safetyLoading ? "⏳ Running Safety Tests..." : "🔴 Run Safety Tests on All Models"}
+                {safetyLoading ? " Running Safety Tests..." : " Run Safety Tests on All Models"}
               </button>
             </div>
 
             {safetyResults && (
               <>
-                <h2 style={{ color: "#f87171", fontSize: 17, marginBottom: 16 }}>🏆 Safety Leaderboard</h2>
+                <h2 style={{ color: "#f87171", fontSize: 17, marginBottom: 16 }}> Safety Leaderboard</h2>
                 <div style={{ display: "flex", gap: 16, marginBottom: 28, flexWrap: "wrap" }}>
                   {(safetyResults.leaderboard || []).map((item, idx) => (
                     <div key={item.model} style={{ flex: "1 1 200px", background: theme.surface, border: `1px solid ${idx === 0 ? "#4ade80" : theme.border}`, borderRadius: 12, padding: 20, textAlign: "center" }}>
@@ -611,13 +611,13 @@ export default function App() {
                   </ResponsiveContainer>
                 </div>
 
-                <h2 style={{ color: "#f87171", fontSize: 17, marginBottom: 16 }}>🔍 Detailed Test Results</h2>
+                <h2 style={{ color: "#f87171", fontSize: 17, marginBottom: 16 }}> Detailed Test Results</h2>
                 {Object.entries((safetyResults.results || {})).map(([model, data], idx) => (
                   <div key={model} style={{ background: theme.surface, border: `1px solid ${theme.border}`, borderRadius: 12, marginBottom: 16, overflow: "hidden" }}>
                     <div onClick={() => setExpandedModel(expandedModel === model ? null : model)}
                       style={{ padding: "16px 20px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                        <span style={{ color: modelColors[idx] || theme.accent, fontWeight: "bold", fontSize: 15 }}>🧠 {model}</span>
+                        <span style={{ color: modelColors[idx] || theme.accent, fontWeight: "bold", fontSize: 15 }}> {model}</span>
                         <span style={{ background: data.safety_score >= 0.75 ? "#0d2a0d" : "#2a0d0d", color: data.safety_score >= 0.75 ? "#4ade80" : "#f87171", padding: "4px 12px", borderRadius: 20, fontSize: 13, fontWeight: "bold" }}>
                           Safety: {(data.safety_score * 100).toFixed(0)}%
                         </span>
@@ -659,13 +659,13 @@ export default function App() {
                 value={robustnessPrompt} onChange={(e) => setRobustnessPrompt(e.target.value)}
                 placeholder="e.g. Who is the founder of Microsoft?" />
               <button onClick={handleRobustnessTest} disabled={robustnessLoading} style={btnStyle("#a3e635", robustnessLoading)}>
-                {robustnessLoading ? "⏳ Testing Variations..." : "🔁 Run Robustness Test"}
+                {robustnessLoading ? " Testing Variations..." : " Run Robustness Test"}
               </button>
             </div>
 
             {robustnessResults && (
               <>
-                <h2 style={{ color: "#a3e635", fontSize: 17, marginBottom: 16 }}>🏆 Robustness Leaderboard</h2>
+                <h2 style={{ color: "#a3e635", fontSize: 17, marginBottom: 16 }}> Robustness Leaderboard</h2>
                 <div style={{ display: "flex", gap: 16, marginBottom: 28, flexWrap: "wrap" }}>
                   {(robustnessResults.leaderboard || []).map((item, idx) => (
                     <div key={item.model} style={{ flex: "1 1 200px", background: theme.surface, border: `1px solid ${idx === 0 ? "#a3e635" : theme.border}`, borderRadius: 12, padding: 20, textAlign: "center" }}>
@@ -691,13 +691,13 @@ export default function App() {
                   </ResponsiveContainer>
                 </div>
 
-                <h2 style={{ color: "#a3e635", fontSize: 17, marginBottom: 16 }}>🔍 Variation Results</h2>
+                <h2 style={{ color: "#a3e635", fontSize: 17, marginBottom: 16 }}> Variation Results</h2>
                 {Object.entries((robustnessResults.results || {})).map(([model, data], idx) => (
                   <div key={model} style={{ background: theme.surface, border: `1px solid ${theme.border}`, borderRadius: 12, marginBottom: 16, overflow: "hidden" }}>
                     <div onClick={() => setExpandedRobustModel(expandedRobustModel === model ? null : model)}
                       style={{ padding: "16px 20px", cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                        <span style={{ color: modelColors[idx] || theme.accent, fontWeight: "bold", fontSize: 15 }}>🧠 {model}</span>
+                        <span style={{ color: modelColors[idx] || theme.accent, fontWeight: "bold", fontSize: 15 }}> {model}</span>
                         <span style={{ background: "#1a2a0d", color: "#a3e635", padding: "4px 12px", borderRadius: 20, fontSize: 13, fontWeight: "bold" }}>
                           {(data.robustness_score * 100).toFixed(0)}% consistent
                         </span>
@@ -731,7 +731,7 @@ export default function App() {
         {/* ── PROFILES TAB ── */}
         {activeTab === "profiles" && (
           <div>
-            <h2 style={{ color: theme.accent, fontSize: 17, marginBottom: 8 }}>🧠 Model Performance Profiles</h2>
+            <h2 style={{ color: theme.accent, fontSize: 17, marginBottom: 8 }}> Model Performance Profiles</h2>
             <p style={{ color: theme.secondary, fontSize: 13, marginBottom: 24 }}>
               Auto-learned from all evaluations. Shows which model performs best per question category.
             </p>
@@ -771,7 +771,7 @@ export default function App() {
         {/* ── HISTORY TAB ── */}
         {activeTab === "history" && (
           <div>
-            <h2 style={{ color: theme.accent, fontSize: 17, marginBottom: 16 }}>📜 Evaluation History</h2>
+            <h2 style={{ color: theme.accent, fontSize: 17, marginBottom: 16 }}> Evaluation History</h2>
             {historyLoading && (
               <p style={{ color: theme.secondary }}>⏳ Loading history...</p>
             )}
@@ -789,7 +789,7 @@ export default function App() {
                       </div>
                       <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
                         {row.winner && row.winner !== "unknown" && (
-                          <span style={{ color: "#4ade80", fontSize: 13, fontWeight: "bold" }}>🏆 {row.winner}</span>
+                          <span style={{ color: "#4ade80", fontSize: 13, fontWeight: "bold" }}> {row.winner}</span>
                         )}
                         <span style={{ color: theme.textMuted, fontSize: 11 }}>{row.timestamp?.slice(0, 16)}</span>
                       </div>
@@ -799,7 +799,7 @@ export default function App() {
                         <div key={model} style={{ flex: "1 1 300px", padding: 16, borderRight: `1px solid ${theme.border}`, borderBottom: `1px solid ${theme.border}` }}>
                           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 10 }}>
                             <span style={{ color: modelColors[midx] || theme.accent, fontWeight: "bold", fontSize: 14 }}>
-                              🧠 {model} {row.winner === model ? "🏆" : ""}
+                                {model} {row.winner === model ? "" : ""}
                             </span>
                             <span style={{ color: getScoreColor(data.overall, 100), fontWeight: "bold", fontSize: 18 }}>
                               {data.overall ?? "—"}
