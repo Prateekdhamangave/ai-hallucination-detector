@@ -2,7 +2,9 @@
 
 ## Dashboard Preview
 
-![Evaluation Dashboard](screenshots/evaluation-dashboard.png)
+The framework provides an interactive evaluation dashboard for comparing model responses, inspecting judge scores, and analyzing hallucination indicators.
+
+![Evaluation Dashboard](screenshots/screenshotsevaluation-dashboard.png)
 
 ## Overview
 
