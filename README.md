@@ -22,15 +22,23 @@ The framework provides an interactive dashboard for evaluating, benchmarking, an
 
 ![Evaluation Dashboard](screenshots/screenshotsevaluation-dashboard.png)
 ---
-## Dashboard
 
-### Model Evaluation
+## Key Dashboard Components
+
+### Model Evaluation 
 
 ![Model Evaluation](screenshots/model-evaluation.png)
 
-### Judge Score Comparison
+### Judge Score Comparison 
 
 ![Judge Score Comparison](screenshots/judge-comparison.png)
+
+### Benchmark Results
+
+The benchmarking module compares multiple language models on identical prompts and ranks them using quantitative metrics and LLM-as-a-Judge scores.
+
+![Benchmark Results](screenshots/benchmark-results.png)
+
 ## Key Features
 
 ### Multi-Model Evaluation
