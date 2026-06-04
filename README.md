@@ -14,6 +14,38 @@ Rather than relying on a single metric, the system combines multiple complementa
 
 ---
 
+## Project Status
+
+This project is currently under active development and serves as an experimental framework for evaluating the reliability and trustworthiness of Large Language Model (LLM) outputs.
+
+### Implemented Features
+
+* Multi-model response evaluation
+* LLM-as-a-Judge scoring
+* Semantic similarity analysis
+* BLEU and ROUGE evaluation metrics
+* Benchmark execution and comparison
+* Historical evaluation tracking
+* Model performance profiling
+* Interactive analytics dashboard
+
+### In Progress
+
+* Advanced hallucination detection workflows
+* Multi-model verification pipelines
+* Automated report generation
+* Enhanced benchmark management
+
+### Planned Features
+
+* Retrieval-Augmented Verification (RAV)
+* Citation-grounded hallucination detection
+* PostgreSQL migration
+* Docker deployment
+* CI/CD integration
+* Agent reliability evaluation
+* Consensus-based answer synthesis
+
 ## Dashboard Preview
 
 The framework provides an interactive dashboard for evaluating, benchmarking, and comparing responses from multiple language models.
