@@ -22,35 +22,26 @@ This project was developed as an experimental platform for studying response qua
 
 ## Project Status
 
-This project is currently under active development and serves as an experimental framework for evaluating the reliability and trustworthiness of Large Language Model (LLM) outputs.
+**Status:** Active Development
 
-### Implemented Features
+This project is currently being developed as an experimental framework for evaluating the reliability and trustworthiness of Large Language Model (LLM) outputs.
 
-* Multi-model response evaluation
-* LLM-as-a-Judge scoring
-* Semantic similarity analysis
-* BLEU and ROUGE evaluation metrics
-* Benchmark execution and comparison
-* Historical evaluation tracking
-* Model performance profiling
-* Interactive analytics dashboard
+### Current Capabilities
 
-### In Progress
+- Multi-model response evaluation
+- LLM-as-a-Judge scoring
+- Semantic similarity analysis
+- BLEU and ROUGE evaluation metrics
+- Benchmark execution and comparison
+- Historical evaluation tracking
+- Model performance profiling
+- Interactive analytics dashboard
 
-* Advanced hallucination detection workflows
-* Multi-model verification pipelines
-* Automated report generation
-* Enhanced benchmark management
+### Development Focus
 
-### Planned Features
+Current development efforts are centered on improving hallucination analysis, multi-model verification, automated reporting, and reliability-focused benchmarking workflows.
 
-* Retrieval-Augmented Verification (RAV)
-* Citation-grounded hallucination detection
-* PostgreSQL migration
-* Docker deployment
-* CI/CD integration
-* Agent reliability evaluation
-* Consensus-based answer synthesis
+For a detailed roadmap of planned research directions and infrastructure enhancements, see the **Future Work** section.
 
 ## Dashboard Preview
 
@@ -58,7 +49,7 @@ The framework provides an interactive dashboard for evaluating, benchmarking, an
 
 ### Model Evaluation Dashboard
 
-![Evaluation Dashboard](screenshots/screenshotsevaluation-dashboard.png)
+![Evaluation Dashboard](screenshots/evaluation-dashboard.png)
 ---
 
 ## Key Dashboard Components
@@ -229,7 +220,7 @@ Measures preservation of important concepts and entities.
 
 The hallucination analysis pipeline estimates factual reliability through:
 
-* Reference retrieval
+* Reference-answer comparison
 * Semantic alignment analysis
 * Evidence consistency checks
 * Hallucination risk estimation
@@ -254,6 +245,8 @@ The individual scores are aggregated into a final evaluation score used for rank
 The framework supports comparative evaluation of multiple language models under identical conditions.
 
 ### Example Benchmark Results
+
+The following results are representative examples obtained during development and validation of the framework. Scores may vary depending on prompts, datasets, and model versions.
 
 | Model       | Final Score | Accuracy | Completeness | Clarity | Reasoning |
 | ----------- | ----------- | -------- | ------------ | ------- | --------- |
@@ -331,6 +324,12 @@ The current implementation uses SQLite and is designed to support future migrati
 
 * Recharts
 * Interactive Analytics Dashboard
+
+### Development Tools
+
+* Git
+* GitHub
+* VS Code
 
 ---
 
@@ -487,27 +486,10 @@ Current limitations include:
 
 ## References
 
-Papineni, K., Roukos, S., Ward, T., & Zhu, W. (2002)
-
-**BLEU: A Method for Automatic Evaluation of Machine Translation**
-
----
-
-Lin, C. Y. (2004)
-
-**ROUGE: A Package for Automatic Evaluation of Summaries**
-
----
-
-Zheng, L. et al. (2023)
-
-**Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena**
-
----
-
-Huang, L. et al. (2025)
-
-**A Survey on Hallucination in Large Language Models**
+1. Papineni et al. (2002) – BLEU: A Method for Automatic Evaluation of Machine Translation
+2. Lin (2004) – ROUGE: A Package for Automatic Evaluation of Summaries
+3. Zheng et al. (2023) – Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena
+4. Huang et al. (2025) – A Survey on Hallucination in Large Language Models
 
 ---
 
