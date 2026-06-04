@@ -445,10 +445,10 @@ Current limitations include:
 
 ### Hallucination Research
 
-* Retrieval-Augmented Verification
+* Retrieval-Augmented Verification (RAV)
 * Multi-source evidence validation
 * Claim-level fact verification
-* Citation-grounded evaluation
+* Citation-grounded response evaluation
 * Confidence calibration analysis
 
 ### Multi-Model Verification
@@ -459,28 +459,29 @@ Current limitations include:
 * Cross-model critique pipelines
 * Ensemble reliability scoring
 
-### Infrastructure
+### Infrastructure and Deployment
 
-* PostgreSQL migration
-* SQLAlchemy integration
-* Docker deployment
-* Automated PDF report generation
-* CI/CD pipelines
+* Docker containerization
+* CI/CD pipeline integration
+* Cloud-native deployment
+* Scalable benchmark execution
+* Distributed evaluation workflows
 
-### Safety and Robustness
+### Advanced Reliability Analysis
 
-* Adversarial prompt testing
-* Prompt injection resistance
-* Jailbreak evaluation
-* Safety benchmarking
 * Agent reliability assessment
-
-### Self-Improving Evaluation Systems
-
+* Reliability trend forecasting
 * Failure pattern discovery
 * Dynamic benchmark generation
 * Automated evaluator refinement
-* Reliability trend forecasting
+
+### Research Directions
+
+* Longitudinal model performance analysis
+* Domain-specific reliability benchmarking
+* Human-AI evaluation correlation studies
+* Trustworthiness assessment frameworks
+* Self-improving evaluation systems
 
 ---
 
