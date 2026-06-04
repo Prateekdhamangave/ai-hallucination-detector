@@ -267,11 +267,11 @@ The individual scores are aggregated into a final evaluation score used for rank
 
 ## Experimental Results
 
-The framework supports comparative evaluation of multiple language models under identical conditions.
+The framework supports comparative evaluation of multiple language models under identical evaluation conditions.
 
 ### Example Benchmark Results
 
-The following results are representative examples obtained during development and validation of the framework. Scores may vary depending on prompts, datasets, and model versions.
+The following results represent an example benchmark conducted during development and validation of the framework. Performance may vary depending on prompts, datasets, evaluation criteria, and model versions.
 
 | Model       | Final Score | Accuracy | Completeness | Clarity | Reasoning |
 | ----------- | ----------- | -------- | ------------ | ------- | --------- |
@@ -281,11 +281,15 @@ The following results are representative examples obtained during development an
 
 ### Observations
 
-* DeepSeek V3 consistently achieved the highest overall evaluation scores during initial experiments.
-* Llama generated concise and readable responses but occasionally lacked depth.
-* Qwen demonstrated strong clarity while sometimes omitting supporting details.
-* Higher semantic similarity often correlated with stronger judge scores.
-* Multi-model agreement appeared to be a useful indicator of response reliability.
+* DeepSeek V3 achieved the highest overall evaluation score in the representative benchmark shown above.
+* Llama generated concise and readable responses while occasionally providing less detailed explanations.
+* Qwen demonstrated strong clarity and readability while sometimes omitting supporting details.
+* Higher semantic similarity scores frequently aligned with stronger LLM-as-a-Judge evaluations.
+* Agreement across multiple models appeared to be a useful indicator of response reliability and consistency.
+
+### Interpretation
+
+The results suggest that combining lexical metrics, semantic similarity analysis, and LLM-as-a-Judge evaluation provides a more comprehensive assessment of response quality than relying on a single metric. The framework is designed to support comparative analysis rather than declare a universally best-performing model.
 
 ---
 
@@ -366,15 +370,15 @@ ai-hallucination-detector/
 ├── app/
 │   ├── __init__.py
 │   ├── main.py                 # FastAPI application and API endpoints
-│   ├── evaluator.py            # Evaluation and scoring logic
+│   ├── evaluator.py            # Evaluation, scoring, safety, and robustness logic
 │   ├── llm_client.py           # Multi-model inference layer
-│   ├── database.py             # Database operations and storage
+│   ├── database.py             # PostgreSQL database integration via SQLAlchemy
 │   └── test_models.py          # Model testing utilities
 │
 ├── frontend/
 │   ├── public/
 │   ├── src/
-│   │   ├── App.jsx             # Main dashboard interface
+│   │   ├── App.jsx             # Main analytics dashboard
 │   │   ├── App.css
 │   │   ├── index.css
 │   │   └── main.jsx
@@ -393,7 +397,7 @@ ai-hallucination-detector/
 │
 ├── requirements.txt            # Python dependencies
 ├── start.bat                   # Application startup script
-├── test_benchmark.py           # Benchmark testing script
+├── test_benchmark.py           # Benchmark testing utilities
 ├── README.md
 └── .gitignore
 ```
