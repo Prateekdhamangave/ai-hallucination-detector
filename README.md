@@ -28,14 +28,17 @@ This project is currently being developed as an experimental framework for evalu
 
 ### Current Capabilities
 
-- Multi-model response evaluation
-- LLM-as-a-Judge scoring
-- Semantic similarity analysis
-- BLEU and ROUGE evaluation metrics
-- Benchmark execution and comparison
-- Historical evaluation tracking
-- Model performance profiling
-- Interactive analytics dashboard
+* Multi-model response evaluation
+* LLM-as-a-Judge scoring
+* Semantic similarity analysis
+* BLEU and ROUGE evaluation metrics
+* Hallucination analysis
+* Benchmark execution and comparison
+* Safety and robustness testing
+* Historical evaluation tracking
+* Model performance profiling
+* Automated report generation
+* Interactive analytics dashboard
 
 ### Development Focus
 
