@@ -298,6 +298,7 @@ The current implementation uses SQLite and is designed to support future migrati
 
 * Python
 * FastAPI
+* Uvicorn
 
 ### Frontend
 
@@ -306,30 +307,29 @@ The current implementation uses SQLite and is designed to support future migrati
 
 ### Database
 
-* SQLite
+* PostgreSQL
+* SQLAlchemy
 
-### NLP & Evaluation
+### Evaluation & NLP
 
-* Sentence Transformers
-* BLEU
-* ROUGE
-
-### Model Evaluation
-
-* LLM-as-a-Judge Evaluation
+* BLEU Score
+* ROUGE Score
 * Semantic Similarity Analysis
-* Hallucination Assessment
+* Keyword Overlap Analysis
+* LLM-as-a-Judge Evaluation
 
-### Visualization
+### Language Models
 
-* Recharts
-* Interactive Analytics Dashboard
+* DeepSeek
+* Llama
+* Qwen
 
 ### Development Tools
 
 * Git
 * GitHub
 * VS Code
+
 
 ---
 
