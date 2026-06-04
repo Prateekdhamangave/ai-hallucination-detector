@@ -286,25 +286,40 @@ The current implementation uses SQLite and is designed to support future migrati
 
 ```text
 ai-hallucination-detector/
-
+│
 ├── app/
-│   ├── main.py
-│   ├── evaluator.py
-│   ├── llm_client.py
-│   ├── database.py
-│   └── __init__.py
+│   ├── __init__.py
+│   ├── main.py                 # FastAPI application and API endpoints
+│   ├── evaluator.py            # Evaluation and scoring logic
+│   ├── llm_client.py           # Multi-model inference layer
+│   ├── database.py             # Database operations and storage
+│   └── test_models.py          # Model testing utilities
 │
 ├── frontend/
-│   ├── src/
 │   ├── public/
-│   └── package.json
+│   ├── src/
+│   │   ├── App.jsx             # Main dashboard interface
+│   │   ├── App.css
+│   │   ├── index.css
+│   │   └── main.jsx
+│   │
+│   ├── package.json
+│   ├── package-lock.json
+│   └── vite.config.js
 │
 ├── screenshots/
-│   └── evaluation-dashboard.png
+│   ├── evaluation-dashboard.png
+│   ├── model-evaluation.png
+│   ├── judge-comparison.png
+│   ├── benchmark-results.png
+│   ├── evaluation-history.png
+│   └── model-performance-profiles.png
 │
-├── requirements.txt
-├── start.bat
-└── README.md
+├── requirements.txt            # Python dependencies
+├── start.bat                   # Application startup script
+├── test_benchmark.py           # Benchmark testing script
+├── README.md
+└── .gitignore
 ```
 
 ---
