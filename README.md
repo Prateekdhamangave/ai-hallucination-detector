@@ -28,11 +28,13 @@ The framework provides an interactive dashboard for evaluating, benchmarking, an
 ### Model Evaluation 
 
 The model evaluation module compares generated responses against reference answers using lexical and semantic evaluation metrics.
+
 ![Model Evaluation](screenshots/model-evaluation.png)
 
 ### Judge Score Comparison 
 
 The LLM-as-a-Judge module evaluates responses across factual accuracy, completeness, clarity, and reasoning quality.
+
 ![Judge Score Comparison](screenshots/judge-comparison.png)
 
 ### Benchmark Results
@@ -46,6 +48,12 @@ The benchmarking module compares multiple language models on identical prompts a
 All evaluation runs are stored for longitudinal analysis, enabling comparison of model behavior across prompts, benchmark runs, and evaluation sessions.
 
 ![Evaluation History](screenshots/evaluation-history.png)
+
+### Model Performance Profiles
+
+The framework maintains historical performance profiles for each model across prompt categories. These profiles track average scores, win rates, and evaluation statistics over time.
+
+![Model Performance Profiles](screenshots/model-performance-profiles.png)
 
 ## Key Features
 
