@@ -22,16 +22,13 @@ The framework provides an interactive dashboard for evaluating, benchmarking, an
 
 ![Evaluation Dashboard](screenshots/screenshotsevaluation-dashboard.png)
 ---
+## Dashboard
 
 ### Model Evaluation
-
-The model evaluation view compares generated responses against reference answers using lexical and semantic evaluation metrics.
 
 ![Model Evaluation](screenshots/model-evaluation.png)
 
 ### Judge Score Comparison
-
-The LLM-as-a-Judge module evaluates responses across multiple qualitative dimensions including factual accuracy, completeness, clarity, and reasoning quality.
 
 ![Judge Score Comparison](screenshots/judge-comparison.png)
 ## Key Features
